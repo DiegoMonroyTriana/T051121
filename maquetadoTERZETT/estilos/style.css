@@ -1,0 +1,359 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,100);
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Lato";
+
+}
+
+.fade-in{
+    opacity: 0;
+    transition: opacity 250ms ease-in;
+}
+.fade-in.appear{
+    opacity: 1;
+}
+
+.barra{
+    display: block;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 10px 10px -5px rgba(0,0,0,0.5);
+    
+}
+.menu{
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.logo{
+    width: 300px;
+    cursor: pointer;
+}
+.menu ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px ;
+    position: relative;
+}
+.menu ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+
+}
+.tr {
+    width: 30px;
+    height: 30px;
+    margin-top: 0px;
+    
+}
+.menu ul li::before{
+    content: "";
+    height: 3px;
+    width: 0%;
+    background: red;
+    position: absolute;
+    left: 0;
+    bottom: -12px;
+    transition: 0.4s ease-out;
+}
+.menu ul li:hover::before{
+    width: 100%;
+
+}
+.proyectos{
+    align-items: center;
+    display: flex;
+    background: linear-gradient(to right, white 0%, rgba(255,255,255,0)20%);
+    
+}
+.pr{
+    padding: auto;
+    text-align: center;
+    width: 100%;
+}
+.proyectos h2{
+    font-size: 3em;
+    color: brown;
+}
+.cuadro{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    width: 600px;
+   
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+.cuadro .circulo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.cuadro .circulo::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #FFF ;
+    clip-path: circle(120px at center);
+    transition: 0.5s;
+}
+.cuadro:hover .circulo:before{
+    background: #FFF3E0;
+    clip-path: circle(4000px at center);
+}
+.cuadro img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50%);
+    height: 200px;
+    pointer-events: none;
+    
+    transition: 0.5s;
+
+}
+.cuadro:hover img{
+    left: 75%;
+    height: 300px;
+}
+.cuadro .content{
+    position: relative;
+    width: 50%;
+    left: 20%;
+    padding: 20px 20px 20px 20px;
+    opacity: 0;
+    visibility: hidden;
+}
+.cuadro:hover .content{
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+}
+.cuadro .content h2{
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    font-size: 2em;
+    line-height: 1em;
+    margin-bottom: 5px;
+}
+.cuadro .content p{
+    color: rgb(0, 0, 0)
+}
+.cuadro .content a{
+    position: relative;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: #fff;
+    color: #111;
+    margin-top: 10px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 700;
+}
+.slider{
+    width: 100%;
+    height: 30%;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+    box-shadow: 0 10px 10px -5px rgba(0,0,0,0.5);
+}
+.slider::before,.slider::after{
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    background: linear-gradient(to right, white 0%, rgba(255,255,255,0)20%);
+    z-index: 2;
+}
+.slider::before{
+    top: 0;
+    left: 0;
+}
+.slider::after{
+    top: 0;
+    right: 0;
+    transform: rotateZ(180deg);
+}
+.slider .slider-track{
+    display: flex;
+    width: calc(250px * 14);
+    animation: scroll 40s infinite linear;
+}
+.slider .slide img{
+    width: 250px;
+    height: 100px;
+    padding-right: 30px;
+    transition: 0.3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes scroll{
+    0%{
+        transform: translateX(0%);
+    }
+   
+    100%{
+        transform: translateX(calc(-250px*7));
+    }
+    
+}
+
+
+.leyenda{
+    justify-content: center;
+    background-color: #641E16;
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    color: whitesmoke;
+    font-family: 'Ubuntu', sans-serif; 
+}
+.three{
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(#292929, #000000);
+   
+    
+}
+
+
+section{
+    position: absolute;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #F5B7B1 , #B03A2E );
+    overflow: hidden;
+}
+section::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+    border-top: 1px solid rgba(255,255,255,0.5);
+}
+section .color{
+    position: absolute;
+    filter:blur(150px) ;
+}
+section .color:nth-child(1){
+    background: #641E16;
+    width: 600px; 
+    height: 600px;
+    top: -350px;
+}
+section .color:nth-child(2)
+{
+    background: #641E16;
+    width: 500px; 
+    height: 500px;
+    bottom: -350px;
+    left: 100px;
+}
+section .color:nth-child(3)
+{
+    background: #641E16;
+    width: 300px; 
+    height: 300px;
+    bottom: 50px;
+    right: 0px;
+}
+.red{
+    position: relative;
+    display: flex;
+    z-index: 2;
+}
+.red li{
+    position: relative;
+    list-style: none;
+    margin: 10px;
+}
+.red li a {
+    position: relative;
+    width: 55px;
+    height: 55px;
+    display: inline-block;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 2em;  
+    border: 1px solid rgba(255,255,255,0.4);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 5px 45px rgba(0,0,0,0.1);
+    backdrop-filter: blur(2px);
+    transition: 0.5s;
+    overflow: hidden;
+}
+.red li a:hover{
+    transform: translateY(-20px);
+}
+.red li a::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 100%;
+    background: rgba(255,255,255,0.5);
+    transform:  skewX(45deg) translateX(150px);
+    transition: 0.5s;
+
+}
+.red li a:hover::before{
+    transform: skewX(45deg) translateX(-150px);
+}
+.col-main {
+    flex: 1;  
+  }  
+  
+  .col-complementary {
+    flex: 1;  
+  }
+  
+  
+  @media only screen and (min-width: 640px) {
+    .layout {
+      display: flex;
+    }
+  }
+  
+  
+  .container {
+    max-width: 60em;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  .col {
+    padding: 1em;
+    margin: 0 2px 2px 0;
+    background: #ffffff;
+  }
+  
